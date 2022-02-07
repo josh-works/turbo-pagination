@@ -3,7 +3,7 @@ class WidgetsController < ApplicationController
 
   # GET /widgets or /widgets.json
   def index
-    @widgets = Widget.all
+    @pagy, @widgets = pagy(Widget.all, items: 10)
   end
 
   # GET /widgets/1 or /widgets/1.json

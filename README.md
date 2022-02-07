@@ -1,24 +1,30 @@
-# README
+working through https://dev.to/davidcolbyatx/pagination-and-infinite-scrolling-with-rails-and-the-hotwire-stack-34om
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Install `Faker`, add to `seeds.rb`:
 
-Things you may want to cover:
+```ruby
+50.times do |n|
+  Widget.create(name: Faker::Appliance.equipment)
+end
+```
 
-* Ruby version
+```
+b rails db:create
+b rails db:migrate
+b rails db:seed
+foreman start -f Procfile.dev
+```
 
-* System dependencies
+```ruby
+# routes.rb
+root to: "widgets#index"
+```
 
-* Configuration
+and visit `localhost:3000`. Beautiful widgets.
 
-* Database creation
+Now, adding `pagy` to give regular pagination options.
 
-* Database initialization
+update `application_controller.rb`, `application_helper.rb`, `widgets_controller.rb`, and `index.html.erb`
 
-* How to run the test suite
+restart the server, reload the page, and it looks great!
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
