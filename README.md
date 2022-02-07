@@ -58,6 +58,23 @@ and in it, it's the `turbo_frame_tag "page_handler"`, wich a `turbo_stream_actio
 
 We updated our `index.html.erb` to also wrap the widgets in a `turbo_frame tag "page_handler"` method.
 
-And we're done! Lets deploy to heroku:
+And we're done! Lets deploy to heroku, and see what happens...
 
 https://turbo-pagination-tutorial.herokuapp.com/
+
+lets see, adding:
+
+```
+bundle lock --add-platform x86_64-linux
+```
+
+then add/commit/push, then:
+
+```
+heroku run rails db:migrate
+heroku run rails db:seed
+```
+
+Ah, to run in production, I cannot have `Faker` inside a `dev` or `test` block in my Gemfile...
+
+Fixing that, re-seeding the DB, and... I think we're in a good spot.
