@@ -1,7 +1,7 @@
 <div id="<%= dom_id widget %>">
   <p class="my-5">
     <strong class="block font-medium mb-1">Name:</strong>
-    <%= widget.name %>
+    <%= widget.name %> (from <%= link_to widget.brand.name, brand_path(widget.brand), class: "underline" %>)
   </p>
 
   <% if action_name != "show" %>

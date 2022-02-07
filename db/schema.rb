@@ -10,15 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_07_013846) do
+ActiveRecord::Schema.define(version: 2022_02_07_155020) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "brands", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["name"], name: "index_brands_on_name", unique: true
+  end
 
   create_table "widgets", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "brand_id", null: false
+    t.index ["brand_id"], name: "index_widgets_on_brand_id"
   end
 
+  add_foreign_key "widgets", "brands"
 end

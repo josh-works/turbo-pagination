@@ -1,0 +1,7 @@
+<strong class="block font-medium mb-1">Widgets:</strong>
+
+<% @brand.widgets.each do |w| %>
+  <ul>
+    <li class="underline"><%= link_to w.name, widget_path(w) %></li>
+  </ul>
+<% end %>

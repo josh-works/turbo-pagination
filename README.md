@@ -78,3 +78,16 @@ heroku run rails db:seed
 Ah, to run in production, I cannot have `Faker` inside a `dev` or `test` block in my Gemfile...
 
 Fixing that, re-seeding the DB, and... I think we're in a good spot.
+
+OK, added a 1:many relationship, just for fun and practice.
+
+a scaffold, two extra migrations, and a little wiring up, and the `db:seed` function still works, and now we've got this `brand` thing:
+
+```
+rails g scaffold Brand name:string
+rails g migration AddBrandToWidgets brand:references
+rails g migration AddUniquenessConstraintToBrands
+```
+
+and... it looks nice.
+
