@@ -1,7 +1,7 @@
 Widget.destroy_all
 Brand.destroy_all
 5.times do |n|
-  b = Brand.new(name: Faker::Appliance.brand)
+  b = Brand.find_or_create_by(name: Faker::Appliance.brand)
   b.save if b.valid?
 end
 
