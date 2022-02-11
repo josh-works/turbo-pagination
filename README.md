@@ -91,3 +91,40 @@ rails g migration AddUniquenessConstraintToBrands
 
 and... it looks nice.
 
+Now working through https://www.better.dev/making-tailwind-css-navbars, to learn to add a tolerable nav bar via tailwind.
+
+so far:
+
+```HTML+ERB
+<nav class="bg-black">
+  <div class="max-w-7xl mx-auto border border-red-400">
+    <div class="py-32 text-center">
+      <h2 class="font-extrabold text-6x1">Widgets And Brands!</h2>
+    </div>
+    
+  </div>
+</nav>
+```
+
+### tailwind stuff
+
+- `bg-black` sets background color
+- `max-w` max-width
+- `mx-auto` sets margin on both sides to center
+- `py` = `padding-y`
+- `flex` is clutch. `flex justify-between` and `flex space-x-4` is nice.
+
+```html
+<a href="#" class="py-3 px-3 bg-yellow-400 text-yell0w-800 rounded">Signup</a>
+```
+
+That makes a nice signup button.
+
+```
+hover:text-gray-900
+```
+
+makes a nice mouse-over effect.
+
+OK, deployed to heroku - cannot run rails console commands from this wifi network, so had to log onto heroku and run from the web UI. 
+
