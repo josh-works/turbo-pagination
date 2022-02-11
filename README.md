@@ -91,6 +91,8 @@ rails g migration AddUniquenessConstraintToBrands
 
 and... it looks nice.
 
+## Tailwind navbar
+
 Now working through https://www.better.dev/making-tailwind-css-navbars, to learn to add a tolerable nav bar via tailwind.
 
 so far:
